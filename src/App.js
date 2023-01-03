@@ -1,25 +1,34 @@
 import Navbar from "./Navbar";
 import Footer from "./footer";
 import Home from "./Home";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const title = "Thairu";
 
 function App() {
   return (
-    <div className="App m-2">
+      <Router>
+        <div className="App m-2">
 
-    <Navbar/>
+        <Navbar/>
 
-    {/* Content */}
+          {/* Content */}
 
-    <div>
-    <Home/>
-    </div>
+          <div>
+            <Switch>
+              <Route>
 
-    {/* End of Content */}
+                  <Home/>
+                  
+              </Route>
+            </Switch>
+          </div>
 
-    <Footer/>
-    </div>
+          {/* End of Content */}
+
+          <Footer/>
+        </div>
+      </Router>
   );
 }
 
